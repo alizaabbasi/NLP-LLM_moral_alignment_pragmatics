@@ -1,45 +1,45 @@
 # P10: Right, Wrong, and Everything in Between: An Empirical Study of LLM Pragmatics and Moral Alignment
- 
-**Course:** Text Mining & Sentiment Analysis[span_1](start_span)[span_1](end_span)  
+
+**Course:** Text Mining & Sentiment Analysis  
 
 ---
 
 ## Overview
-This repository contains the software pipeline and analytical framework for an empirical study examining how Large Language Models (LLMs) navigate morally ambiguous, unethical, or harmful prompts[span_2](start_span)[span_2](end_span). By testing paired behavioral scenarios—contrasting socially acceptable actions with harmful deviations—this project measures the tension between an LLM's safety guardrails and its linguistic pragmatics[span_3](start_span)[span_3](end_span). 
+This repository contains the software pipeline and analytical framework for an empirical study examining how Large Language Models (LLMs) navigate morally ambiguous, unethical, or harmful prompts. By testing paired behavioral scenarios—contrasting socially acceptable actions with harmful deviations—this project measures the tension between an LLM's safety guardrails and its linguistic pragmatics. 
 
-The study reveals that while models maintain an 88.0% compliance rate for non-explicit ethical deviations, their linguistic coherence degrades significantly, forcing them to resort to unnatural pragmatic shifts rather than coherent contextual reasoning[span_4](start_span)[span_4](end_span). 
+The study reveals that while models maintain an 88.0% compliance rate for non-explicit ethical deviations, their linguistic coherence degrades significantly, forcing them to resort to unnatural pragmatic shifts rather than coherent contextual reasoning. 
 
 ---
 
 ## Key Findings
-* **Compliance vs. Refusal:** The model exhibited an 88.0% compliance rate (answered prompts) and a 12.0% hard refusal rate[span_5](start_span)[span_5](end_span). Hard refusals were strictly triggered by explicit abuse guardrails[span_6](start_span)[span_6](end_span).
-* **Linguistic Degradation Paradigms:** Instead of graceful handling of moral grey areas, the model deployed four distinct pragmatic deflection strategies[span_7](start_span)[span_7](end_span):
-  1. **Grammatical Deflection:** Treating benign inputs as syntax exercises[span_8](start_span)[span_8](end_span).
-  2. **Moralizing & Preachy Warnings:** Lecturing users on safety when presented with non-violating but dangerous inputs[span_9](start_span)[span_9](end_span).
-  3. **Repetition Loops:** Generating the exact same sentence consecutively when alignment parameters are confused[span_10](start_span)[span_10](end_span).
-  4. **Hallucinated Logic Puzzles:** Outputting multiple-choice reading comprehension tests when faced with violent absurdity[span_11](start_span)[span_11](end_span).
+* **Compliance vs. Refusal:** The model exhibited an 88.0% compliance rate (answered prompts) and a 12.0% hard refusal rate. Hard refusals were strictly triggered by explicit abuse guardrails.
+* **Linguistic Degradation Paradigms:** Instead of graceful handling of moral grey areas, the model deployed four distinct pragmatic deflection strategies:
+  1. **Grammatical Deflection:** Treating benign inputs as syntax exercises.
+  2. **Moralizing & Preachy Warnings:** Lecturing users on safety when presented with non-violating but dangerous inputs.
+  3. **Repetition Loops:** Generating the exact same sentence consecutively when alignment parameters are confused.
+  4. **Hallucinated Logic Puzzles:** Outputting multiple-choice reading comprehension tests when faced with violent absurdity.
 
 ---
 
 ## Core Architecture & Directory Layout
-The codebase complies with rigorous software engineering standards using clean object-oriented design patterns separated across dedicated modules[span_12](start_span)[span_12](end_span):
+The codebase complies with rigorous software engineering standards using clean object-oriented design patterns separated across dedicated modules:
 
 ```text
 P10_MORAL_ALIGNMENT_PROJECT/
 ├── data/
-│   └── commonsense.csv        # Stores paired, ethically sensitive inputs (acceptable vs. unacceptable actions)[span_13](start_span)[span_13](end_span)
+│   ├── commonsense.csv        # Stores paired, ethically sensitive inputs
 │   └── custom_prompts.json    # Supplementary prompt configurations
 ├── src/
 │   ├── __init__.py            
-│   ├── model_interface.py     # Controls downstream API execution and session handling[span_14](start_span)[span_14](end_span)
-│   ├── analyzer.py            # Classifies text profiles and computes compliance benchmarks[span_15](start_span)[span_15](end_span)
-│   ├── visualizer.py          # Provides structural, isolated plotting methods to support reproducibility[span_16](start_span)[span_16](end_span)
+│   ├── model_interface.py     # Controls API execution and session handling
+│   ├── analyzer.py            # Classifies text profiles and computes benchmarks
+│   ├── visualizer.py          # Structural plotting methods for reproducibility
 │   ├── data_loader.py         # Utility for ingesting scenario structures
-│   └── test_run.py            # Main execution script triggering the evaluation batch[span_17](start_span)[span_17](end_span)
+│   └── test_run.py            # Main execution script triggering the evaluation
 ├── results/
-│   ├── experiment_results.csv # Empirical telemetry dataset generated by the pipeline[span_18](start_span)[span_18](end_span)
-│   └── Figure_1.png           # Multi-panel visual analytics highlighting pragmatic signatures
+│   ├── experiment_results.csv # Empirical telemetry dataset
+│   └── Figure_1.png           # Visual analytics of pragmatic signatures
 ├── notebooks/
-│   └── demo_evaluation.ipynb  # Interactive workspace for quick data validation
+│   └── demo_evaluation.ipynb  # Interactive workspace for quick validation
 ├── requirements.txt           # Python environment dependencies
 └── README.md                  # Project documentation handbook
