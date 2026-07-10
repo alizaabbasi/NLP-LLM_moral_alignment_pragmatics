@@ -9,11 +9,11 @@ loader = DataLoader()
 llm = ModelInterface()
 analyzer = Analyzer()
 
-# # 2. Load your prompts (already limited to 50 inside data_loader.py)
+# # 2. Loading prompts (already limited to 50 inside data_loader.py)
 prompts = loader.load_ethics_dataset(category="commonsense")
 results = []
 
-# # 3. Loop through prompts and get real AI responses
+# # 3. Looping through prompts and get real AI responses
 for item in prompts:
     print(f"Asking model: {item['prompt']}")
     response = llm.query(item['prompt'])
@@ -24,7 +24,7 @@ for item in prompts:
         'response': response
     })
 
-# # 4. Save results to a CSV file for your report
+# # 4. Saving results to a CSV file for report
 df = pd.DataFrame(results)
 df.to_csv('results/experiment_results.csv', index=False)
 print("\nExperiment complete! Results saved to results/experiment_results.csv")
